@@ -1,0 +1,1372 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20183.19.0123.2221                               -->
+<workbook original-version='18.1' source-build='2018.3.3 (20183.19.0123.2221)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <IntuitiveSorting />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column alias='Catch Rate' caption='Catch Rate and Pressure' datatype='real' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='1.0'>
+        <calculation class='tableau' formula='1.0' />
+        <aliases>
+          <alias key='1.0' value='Catch Rate' />
+          <alias key='2.0' value='Pressure' />
+        </aliases>
+        <members>
+          <member alias='Catch Rate' value='1.0' />
+          <member alias='Pressure' value='2.0' />
+        </members>
+      </column>
+      <column alias='Trend line plot' caption='Visualization' datatype='string' datatype-customized='true' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Line Chart&quot;'>
+        <calculation class='tableau' formula='&quot;Line Chart&quot;' />
+        <aliases>
+          <alias key='&quot;Bar Chart&quot;' value='Barplot' />
+          <alias key='&quot;Line Chart&quot;' value='Trend line plot' />
+        </aliases>
+        <members>
+          <member alias='Barplot' value='&quot;Bar Chart&quot;' />
+          <member alias='Trend line plot' value='&quot;Line Chart&quot;' />
+        </members>
+      </column>
+      <column caption='top n ' datatype='real' name='[Parameter 3]' param-domain-type='range' role='measure' type='quantitative' value='4.0'>
+        <calculation class='tableau' formula='4.0' />
+        <range max='4.0' min='1.0' />
+      </column>
+    </datasource>
+    <datasource caption='Marine_CSV_sample' inline='true' name='federated.07s0ff50tr58nh18yxf6l0qafytt' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Marine_CSV_sample' name='textscan.0qmbrs71e9x42u126x5va1h6kyhr'>
+            <connection class='textscan' directory='C:/Users/ruhif/Downloads' filename='Marine_CSV_sample.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='Marine_CSV_sample (2)' name='textscan.0ckk2p71thnrmn10v173x07ci1zh'>
+            <connection class='textscan' directory='C:/Users/ruhif/Downloads' filename='Marine_CSV_sample.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0qmbrs71e9x42u126x5va1h6kyhr' name='Marine_CSV_sample.csv' table='[Marine_CSV_sample#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='real' name='Latitude' ordinal='0' />
+            <column datatype='real' name='Longitude' ordinal='1' />
+            <column datatype='datetime' name='Time of Observation' ordinal='2' />
+            <column datatype='string' name='F4' ordinal='3' />
+            <column datatype='real' name='Sea Level Pressure' ordinal='4' />
+            <column datatype='integer' name='Characteristics of Pressure Tendency' ordinal='5' />
+            <column datatype='integer' name='Pressure Tendency' ordinal='6' />
+            <column datatype='real' name='Air Temperature' ordinal='7' />
+            <column datatype='real' name='Dew Point Temperature' ordinal='8' />
+            <column datatype='integer' name='Wave Period' ordinal='9' />
+            <column datatype='integer' name='Wave Height' ordinal='10' />
+            <column datatype='integer' name='Swell Direction' ordinal='11' />
+            <column datatype='integer' name='Swell Period' ordinal='12' />
+            <column datatype='integer' name='Swell Height' ordinal='13' />
+            <column datatype='integer' name='Total Cloud Amount' ordinal='14' />
+            <column datatype='integer' name='Low Cloud Amount' ordinal='15' />
+            <column datatype='string' name='Cloud Height' ordinal='16' />
+            <column datatype='string' name='Middle Cloud Type' ordinal='17' />
+            <column datatype='string' name='High Cloud Type' ordinal='18' />
+            <column datatype='integer' name='Visibility' ordinal='19' />
+            <column datatype='integer' name='Present Weather' ordinal='20' />
+            <column datatype='integer' name='Past Weather' ordinal='21' />
+            <column datatype='integer' name='Wind Direction' ordinal='22' />
+            <column datatype='integer' name='Wind Speed' ordinal='23' />
+            <column datatype='string' name='Pressure Classification' ordinal='24' />
+            <column datatype='string' name='Fishing Conditions' ordinal='25' />
+            <column datatype='string' name='Fishing day' ordinal='26' />
+            <column datatype='integer' name='Catch Rate' ordinal='27' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Latitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Latitude]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>Latitude</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Longitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Longitude]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>Longitude</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Time of Observation</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[Time of Observation]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>Time of Observation</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F4</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F4]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>F4</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sea Level Pressure</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Sea Level Pressure]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>Sea Level Pressure</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Characteristics of Pressure Tendency</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Characteristics of Pressure Tendency]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>Characteristics of Pressure Tendency</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pressure Tendency</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Pressure Tendency]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>Pressure Tendency</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Air Temperature</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Air Temperature]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>Air Temperature</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Dew Point Temperature</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Dew Point Temperature]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>Dew Point Temperature</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Wave Period</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Wave Period]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>Wave Period</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Wave Height</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Wave Height]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>Wave Height</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Swell Direction</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Swell Direction]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>Swell Direction</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Swell Period</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Swell Period]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>Swell Period</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Swell Height</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Swell Height]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>Swell Height</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Total Cloud Amount</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Total Cloud Amount]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>Total Cloud Amount</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Low Cloud Amount</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Low Cloud Amount]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>Low Cloud Amount</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cloud Height</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Cloud Height]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>Cloud Height</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Middle Cloud Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Middle Cloud Type]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>Middle Cloud Type</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>High Cloud Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[High Cloud Type]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>High Cloud Type</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Visibility</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Visibility]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>Visibility</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Present Weather</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Present Weather]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>Present Weather</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Past Weather</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Past Weather]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>Past Weather</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Wind Direction</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Wind Direction]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>Wind Direction</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Wind Speed</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Wind Speed]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>Wind Speed</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pressure Classification</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Pressure Classification]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>Pressure Classification</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Fishing Conditions</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Fishing Conditions]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>Fishing Conditions</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Fishing day</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Fishing day]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>Fishing day</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Catch Rate</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Catch Rate]</local-name>
+            <parent-name>[Marine_CSV_sample.csv]</parent-name>
+            <remote-alias>Catch Rate</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='catch rate and pressure ' datatype='integer' name='[Calculation_122441645687746560]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='CASE  [Parameters].[Parameter 1]&#13;&#10;WHEN  1 THEN [Catch Rate]&#13;&#10;WHEN 2 THEN [Pressure Tendency]&#13;&#10;END' />
+      </column>
+      <column caption='Line Or Bar ' datatype='string' name='[Calculation_122441645704646657]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 2]' />
+      </column>
+      <column caption='Plots' datatype='string' name='[Calculation_122441645710925826]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 2]' />
+      </column>
+      <column caption='visualization' datatype='string' name='[Calculation_122441645711638531]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 2]' />
+      </column>
+      <column datatype='integer' name='[Catch Rate]' role='measure' type='quantitative' />
+      <column datatype='string' name='[Fishing Conditions]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Fishing day]' role='dimension' type='nominal' />
+      <column aggregation='Avg' datatype='real' name='[Latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column aggregation='Avg' datatype='real' name='[Longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column-instance column='[Set 1]' derivation='InOut' name='[io:Set 1:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Fishing Conditions]' derivation='None' name='[none:Fishing Conditions:nk]' pivot='key' type='nominal' />
+      <group name='[Set 1]' name-style='unqualified' user:ui-builder='filter-group'>
+        <groupfilter count='[Parameters].[Parameter 3]' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+          <groupfilter direction='DESC' expression='SUM([Catch Rate])' function='order' user:ui-marker='order'>
+            <groupfilter function='member' level='[Fishing day]' member='&quot;Y&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </groupfilter>
+        </groupfilter>
+      </group>
+      <layout dim-ordering='alphabetic' dim-percentage='0.466867' group-percentage='0.0436747' measure-ordering='alphabetic' measure-percentage='0.371988' parameter-percentage='0.11747' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[io:Set 1:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>true</bucket>
+            </map>
+            <map to='#a2a2a2'>
+              <bucket>false</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Fishing Conditions:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;N&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;S&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column alias='Catch Rate' caption='Catch Rate and Pressure' datatype='real' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='1.0'>
+          <calculation class='tableau' formula='1.0' />
+          <aliases>
+            <alias key='1.0' value='Catch Rate' />
+            <alias key='2.0' value='Pressure' />
+          </aliases>
+        </column>
+        <column alias='Trend line plot' caption='Visualization' datatype='string' datatype-customized='true' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Line Chart&quot;'>
+          <calculation class='tableau' formula='&quot;Line Chart&quot;' />
+          <aliases>
+            <alias key='&quot;Bar Chart&quot;' value='Barplot' />
+            <alias key='&quot;Line Chart&quot;' value='Trend line plot' />
+          </aliases>
+        </column>
+        <column caption='top n ' datatype='real' name='[Parameter 3]' param-domain-type='range' role='measure' type='quantitative' value='4.0'>
+          <calculation class='tableau' formula='4.0' />
+          <range max='4.0' min='1.0' />
+        </column>
+      </datasource-dependencies>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Bar'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Marine_CSV_sample' name='federated.07s0ff50tr58nh18yxf6l0qafytt' />
+            <datasource name='Parameters' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='Parameters'>
+            <column alias='Catch Rate' caption='Catch Rate and Pressure' datatype='real' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='1.0'>
+              <calculation class='tableau' formula='1.0' />
+              <aliases>
+                <alias key='1.0' value='Catch Rate' />
+                <alias key='2.0' value='Pressure' />
+              </aliases>
+            </column>
+            <column alias='Trend line plot' caption='Visualization' datatype='string' datatype-customized='true' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Line Chart&quot;'>
+              <calculation class='tableau' formula='&quot;Line Chart&quot;' />
+              <aliases>
+                <alias key='&quot;Bar Chart&quot;' value='Barplot' />
+                <alias key='&quot;Line Chart&quot;' value='Trend line plot' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.07s0ff50tr58nh18yxf6l0qafytt'>
+            <column caption='catch rate and pressure ' datatype='integer' name='[Calculation_122441645687746560]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='CASE  [Parameters].[Parameter 1]&#13;&#10;WHEN  1 THEN [Catch Rate]&#13;&#10;WHEN 2 THEN [Pressure Tendency]&#13;&#10;END' />
+            </column>
+            <column caption='visualization' datatype='string' name='[Calculation_122441645711638531]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 2]' />
+            </column>
+            <column datatype='integer' name='[Catch Rate]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Fishing Conditions]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Pressure Tendency]' role='measure' type='quantitative' />
+            <column datatype='datetime' name='[Time of Observation]' role='dimension' type='ordinal' />
+            <column-instance column='[Time of Observation]' derivation='Hour' name='[hr:Time of Observation:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_122441645711638531]' derivation='None' name='[none:Calculation_122441645711638531:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Fishing Conditions]' derivation='None' name='[none:Fishing Conditions:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_122441645687746560]' derivation='Sum' name='[sum:Calculation_122441645687746560:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.07s0ff50tr58nh18yxf6l0qafytt].[none:Calculation_122441645711638531:nk]'>
+            <groupfilter function='member' level='[none:Calculation_122441645711638531:nk]' member='&quot;Bar Chart&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.07s0ff50tr58nh18yxf6l0qafytt].[none:Calculation_122441645711638531:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.07s0ff50tr58nh18yxf6l0qafytt].[sum:Calculation_122441645687746560:qk]' scope='rows' value='' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.07s0ff50tr58nh18yxf6l0qafytt].[sum:Calculation_122441645687746560:qk]' palette='brown_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='tab_base' value='true' />
+            <format attr='enabled' id='um_lcover' value='true' />
+            <format attr='enabled' id='tab_coastline' value='false' />
+            <format attr='enabled' id='pp2_line' value='false' />
+            <format attr='enabled' id='light_adm0_bnd' value='false' />
+            <format attr='enabled' id='light_adm0_lbl' value='false' />
+            <format attr='enabled' id='um_adm0_bnd' value='true' />
+            <format attr='enabled' id='um_adm0_lbl' value='true' />
+            <format attr='enabled' id='light_pp2_statebounds' value='false' />
+            <format attr='enabled' id='light_pp2_statelabels' value='false' />
+            <format attr='enabled' id='pp2_adminlabels' value='false' />
+            <format attr='enabled' id='pp2_statebounds' value='true' />
+            <format attr='enabled' id='pp2_statelabels' value='true' />
+            <format attr='enabled' id='countybounds' value='false' />
+            <format attr='enabled' id='countylabels' value='false' />
+            <format attr='enabled' id='zipbounds' value='false' />
+            <format attr='enabled' id='ziplabels' value='false' />
+            <format attr='enabled' id='tab_areabounds' value='false' />
+            <format attr='enabled' id='tab_arealabels' value='false' />
+            <format attr='enabled' id='tab_msabounds' value='false' />
+            <format attr='enabled' id='tab_msalabels' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.07s0ff50tr58nh18yxf6l0qafytt].[none:Fishing Conditions:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.07s0ff50tr58nh18yxf6l0qafytt].[sum:Calculation_122441645687746560:qk]</rows>
+        <cols>[federated.07s0ff50tr58nh18yxf6l0qafytt].[hr:Time of Observation:ok]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Line'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Marine_CSV_sample' name='federated.07s0ff50tr58nh18yxf6l0qafytt' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column alias='Catch Rate' caption='Catch Rate and Pressure' datatype='real' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='1.0'>
+              <calculation class='tableau' formula='1.0' />
+              <aliases>
+                <alias key='1.0' value='Catch Rate' />
+                <alias key='2.0' value='Pressure' />
+              </aliases>
+            </column>
+            <column alias='Trend line plot' caption='Visualization' datatype='string' datatype-customized='true' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Line Chart&quot;'>
+              <calculation class='tableau' formula='&quot;Line Chart&quot;' />
+              <aliases>
+                <alias key='&quot;Bar Chart&quot;' value='Barplot' />
+                <alias key='&quot;Line Chart&quot;' value='Trend line plot' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.07s0ff50tr58nh18yxf6l0qafytt'>
+            <column caption='catch rate and pressure ' datatype='integer' name='[Calculation_122441645687746560]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='CASE  [Parameters].[Parameter 1]&#13;&#10;WHEN  1 THEN [Catch Rate]&#13;&#10;WHEN 2 THEN [Pressure Tendency]&#13;&#10;END' />
+            </column>
+            <column caption='visualization' datatype='string' name='[Calculation_122441645711638531]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 2]' />
+            </column>
+            <column datatype='integer' name='[Catch Rate]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Fishing Conditions]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Pressure Tendency]' role='measure' type='quantitative' />
+            <column datatype='datetime' name='[Time of Observation]' role='dimension' type='ordinal' />
+            <column-instance column='[Time of Observation]' derivation='Hour' name='[hr:Time of Observation:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_122441645711638531]' derivation='None' name='[none:Calculation_122441645711638531:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Fishing Conditions]' derivation='None' name='[none:Fishing Conditions:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_122441645687746560]' derivation='Sum' name='[sum:Calculation_122441645687746560:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.07s0ff50tr58nh18yxf6l0qafytt].[none:Calculation_122441645711638531:nk]'>
+            <groupfilter function='member' level='[none:Calculation_122441645711638531:nk]' member='&quot;Line Chart&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.07s0ff50tr58nh18yxf6l0qafytt].[none:Calculation_122441645711638531:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.07s0ff50tr58nh18yxf6l0qafytt].[sum:Calculation_122441645687746560:qk]' scope='rows' value='' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.07s0ff50tr58nh18yxf6l0qafytt].[none:Fishing Conditions:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.07s0ff50tr58nh18yxf6l0qafytt].[sum:Calculation_122441645687746560:qk]</rows>
+        <cols>[federated.07s0ff50tr58nh18yxf6l0qafytt].[hr:Time of Observation:ok]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 3'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Marine_CSV_sample' name='federated.07s0ff50tr58nh18yxf6l0qafytt' />
+            <datasource name='Parameters' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='top n ' datatype='real' name='[Parameter 3]' param-domain-type='range' role='measure' type='quantitative' value='4.0'>
+              <calculation class='tableau' formula='4.0' />
+              <range max='4.0' min='1.0' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.07s0ff50tr58nh18yxf6l0qafytt'>
+            <column datatype='integer' name='[Catch Rate]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Fishing Conditions]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Fishing day]' role='dimension' type='nominal' />
+            <column datatype='datetime' name='[Time of Observation]' role='dimension' type='ordinal' />
+            <column-instance column='[Time of Observation]' derivation='Hour' name='[hr:Time of Observation:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Set 1]' derivation='InOut' name='[io:Set 1:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Fishing Conditions]' derivation='None' name='[none:Fishing Conditions:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Catch Rate]' derivation='Sum' name='[sum:Catch Rate:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <columns>
+            <shelf-sort direction='DESC' measure-to-sort-by='[federated.07s0ff50tr58nh18yxf6l0qafytt].[sum:Catch Rate:qk]'>
+              <dimensions-to-sort>
+                <dimension>[federated.07s0ff50tr58nh18yxf6l0qafytt].[hr:Time of Observation:ok]</dimension>
+              </dimensions-to-sort>
+            </shelf-sort>
+          </columns>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='tab_base' value='true' />
+            <format attr='enabled' id='um_lcover' value='true' />
+            <format attr='enabled' id='tab_coastline' value='false' />
+            <format attr='enabled' id='pp2_line' value='false' />
+            <format attr='enabled' id='light_adm0_bnd' value='false' />
+            <format attr='enabled' id='light_adm0_lbl' value='false' />
+            <format attr='enabled' id='um_adm0_bnd' value='true' />
+            <format attr='enabled' id='um_adm0_lbl' value='true' />
+            <format attr='enabled' id='light_pp2_statebounds' value='false' />
+            <format attr='enabled' id='light_pp2_statelabels' value='false' />
+            <format attr='enabled' id='pp2_adminlabels' value='false' />
+            <format attr='enabled' id='pp2_statebounds' value='true' />
+            <format attr='enabled' id='pp2_statelabels' value='true' />
+            <format attr='enabled' id='countybounds' value='false' />
+            <format attr='enabled' id='countylabels' value='false' />
+            <format attr='enabled' id='zipbounds' value='false' />
+            <format attr='enabled' id='ziplabels' value='false' />
+            <format attr='enabled' id='tab_areabounds' value='false' />
+            <format attr='enabled' id='tab_arealabels' value='false' />
+            <format attr='enabled' id='tab_msabounds' value='false' />
+            <format attr='enabled' id='tab_msalabels' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.07s0ff50tr58nh18yxf6l0qafytt].[none:Fishing Conditions:nk]' />
+              <text column='[federated.07s0ff50tr58nh18yxf6l0qafytt].[io:Set 1:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.07s0ff50tr58nh18yxf6l0qafytt].[sum:Catch Rate:qk]</rows>
+        <cols>[federated.07s0ff50tr58nh18yxf6l0qafytt].[hr:Time of Observation:ok]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 4'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Marine_CSV_sample' name='federated.07s0ff50tr58nh18yxf6l0qafytt' />
+          </datasources>
+          <datasource-dependencies datasource='federated.07s0ff50tr58nh18yxf6l0qafytt'>
+            <column datatype='integer' name='[Catch Rate]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Fishing Conditions]' role='dimension' type='nominal' />
+            <column datatype='datetime' name='[Time of Observation]' role='dimension' type='ordinal' />
+            <column-instance column='[Time of Observation]' derivation='Hour' name='[hr:Time of Observation:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Fishing Conditions]' derivation='None' name='[none:Fishing Conditions:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Catch Rate]' derivation='Sum' name='[rank:sum:Catch Rate:ok:1]' pivot='key' type='ordinal'>
+              <table-calc ordering-field='[federated.07s0ff50tr58nh18yxf6l0qafytt].[Fishing Conditions]' ordering-type='Field' rank-options='Competition,Descending' type='Rank' />
+            </column-instance>
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.07s0ff50tr58nh18yxf6l0qafytt].[none:Fishing Conditions:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.07s0ff50tr58nh18yxf6l0qafytt].[rank:sum:Catch Rate:ok:1]</rows>
+        <cols>[federated.07s0ff50tr58nh18yxf6l0qafytt].[hr:Time of Observation:ok]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Dashboard 1'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <datasources>
+        <datasource name='Parameters' />
+      </datasources>
+      <datasource-dependencies datasource='Parameters'>
+        <column alias='Catch Rate' caption='Catch Rate and Pressure' datatype='real' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='1.0'>
+          <calculation class='tableau' formula='1.0' />
+          <aliases>
+            <alias key='1.0' value='Catch Rate' />
+            <alias key='2.0' value='Pressure' />
+          </aliases>
+          <members>
+            <member alias='Catch Rate' value='1.0' />
+            <member alias='Pressure' value='2.0' />
+          </members>
+        </column>
+        <column alias='Trend line plot' caption='Visualization' datatype='string' datatype-customized='true' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Line Chart&quot;'>
+          <calculation class='tableau' formula='&quot;Line Chart&quot;' />
+          <aliases>
+            <alias key='&quot;Bar Chart&quot;' value='Barplot' />
+            <alias key='&quot;Line Chart&quot;' value='Trend line plot' />
+          </aliases>
+          <members>
+            <member alias='Barplot' value='&quot;Bar Chart&quot;' />
+            <member alias='Trend line plot' value='&quot;Line Chart&quot;' />
+          </members>
+        </column>
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='5' param='horz' type='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='3' type='layout-basic' w='82700' x='800' y='1000'>
+              <zone h='56875' id='1' name='Bar' w='82700' x='800' y='42125'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='41125' id='9' name='Line' w='82700' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='157' h='98000' id='4' is-fixed='true' param='vert' type='layout-flow' w='15700' x='83500' y='1000'>
+              <zone h='3875' id='6' name='Bar' pane-specification-id='0' param='[federated.07s0ff50tr58nh18yxf6l0qafytt].[none:Fishing Conditions:nk]' type='color' w='15700' x='83500' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='10250' id='7' mode='list' param='[Parameters].[Parameter 1]' type='paramctrl' w='15700' x='83500' y='4875'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                  <format attr='background-color' value='#ffffff' />
+                </zone-style>
+              </zone>
+              <zone h='7000' id='8' mode='compact' param='[Parameters].[Parameter 2]' type='paramctrl' w='15700' x='83500' y='15125'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                  <format attr='background-color' value='#ffffff' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' maximized='true' name='Bar'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+          <strip size='160'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='list' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card pane-specification-id='0' param='[federated.07s0ff50tr58nh18yxf6l0qafytt].[none:Fishing Conditions:nk]' type='color' />
+            <card mode='compact' param='[Parameters].[Parameter 2]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.07s0ff50tr58nh18yxf6l0qafytt].[avg:Latitude:qk]</field>
+            <field>[federated.07s0ff50tr58nh18yxf6l0qafytt].[hr:Time of Observation:ok]</field>
+            <field>[federated.07s0ff50tr58nh18yxf6l0qafytt].[none:Calculation_122441645711638531:nk]</field>
+            <field>[federated.07s0ff50tr58nh18yxf6l0qafytt].[none:Fishing Conditions:nk]</field>
+            <field>[federated.07s0ff50tr58nh18yxf6l0qafytt].[yr:Time of Observation:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{B4A51663-F424-477B-9284-11676913AC52}' />
+    </window>
+    <window class='worksheet' name='Line'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.07s0ff50tr58nh18yxf6l0qafytt].[none:Fishing Conditions:nk]' type='color' />
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Parameter 2]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.07s0ff50tr58nh18yxf6l0qafytt].[none:Calculation_122441645711638531:nk]</field>
+            <field>[federated.07s0ff50tr58nh18yxf6l0qafytt].[none:Fishing Conditions:nk]</field>
+            <field>[federated.07s0ff50tr58nh18yxf6l0qafytt].[yr:Time of Observation:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{CB390F9C-D812-4BD3-B257-EA34C4830903}' />
+    </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Bar'>
+          <zoom type='entire-view' />
+          <selection-collection>
+            <tuple-selection>
+              <tuple-reference>
+                <tuple-descriptor>
+                  <pane-descriptor>
+                    <x-fields>
+                      <field>[federated.07s0ff50tr58nh18yxf6l0qafytt].[hr:Time of Observation:ok]</field>
+                    </x-fields>
+                    <y-fields>
+                      <field>[federated.07s0ff50tr58nh18yxf6l0qafytt].[sum:Calculation_122441645687746560:qk]</field>
+                    </y-fields>
+                  </pane-descriptor>
+                  <columns>
+                    <field>[federated.07s0ff50tr58nh18yxf6l0qafytt].[hr:Time of Observation:ok]</field>
+                    <field>[federated.07s0ff50tr58nh18yxf6l0qafytt].[none:Fishing Conditions:nk]</field>
+                    <field>[federated.07s0ff50tr58nh18yxf6l0qafytt].[sum:Calculation_122441645687746560:qk]</field>
+                  </columns>
+                </tuple-descriptor>
+                <tuple>
+                  <value>18</value>
+                  <value>&quot;N&quot;</value>
+                  <value>7526</value>
+                </tuple>
+              </tuple-reference>
+            </tuple-selection>
+          </selection-collection>
+        </viewpoint>
+        <viewpoint name='Line'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='8' />
+      <device-preview visible='true' />
+      <simple-id uuid='{FA17BE14-27F4-4DE8-BDB6-2B3CDF9DF62C}' />
+    </window>
+    <window class='worksheet' name='Sheet 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='type_in' param='[Parameters].[Parameter 3]' type='parameter' />
+            <card pane-specification-id='3' param='[federated.07s0ff50tr58nh18yxf6l0qafytt].[none:Fishing Conditions:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.07s0ff50tr58nh18yxf6l0qafytt].[hr:Time of Observation:ok]</field>
+            <field>[federated.07s0ff50tr58nh18yxf6l0qafytt].[io:Set 1:nk]</field>
+            <field>[federated.07s0ff50tr58nh18yxf6l0qafytt].[none:Fishing Conditions:nk]</field>
+            <field>[federated.07s0ff50tr58nh18yxf6l0qafytt].[yr:Time of Observation:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{829EB713-9829-4B94-B2A3-00141355F8F8}' />
+    </window>
+    <window class='worksheet' name='Sheet 4'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.07s0ff50tr58nh18yxf6l0qafytt].[none:Fishing Conditions:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.07s0ff50tr58nh18yxf6l0qafytt].[none:Fishing Conditions:nk]</field>
+            <field>[federated.07s0ff50tr58nh18yxf6l0qafytt].[yr:Time of Observation:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{38812FCA-3CF0-498D-AA49-CDC90DC73345}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Bar' width='192'>
+      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
+      jg8AAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Dashboard 1' width='192'>
+      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
+      AEJpEgChtP8HB8XM+nw20GMAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 3' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='104' name='Sheet 4' width='192'>
+      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
+      SUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
